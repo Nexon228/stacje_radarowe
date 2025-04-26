@@ -1,5 +1,9 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include <QNetworkAccessManager>
+#include <QNetworkReply>
+#include <QNetworkRequest>
+#include <QUrl>
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QJsonArray>
@@ -13,21 +17,15 @@
 #include <QDir>
 #include <QMessageBox>
 
-/**
- * @brief Constructs the MainWindow and initializes the UI and components.
- * @param parent The parent widget.
- */
+
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
 
-    // Initialize thread and worker for API requests
-    apiWorker = new ApiWorker();
-    apiThread = new QThread(this);
-    apiWorker->moveToThread(apiThread);
-    apiThread->start();
+    // Jedna instancja managera
+    QNetworkAccessManager *manager = new QNetworkAccessManager(this);
 
     // Usuń istniejący QFrame
     QFrame* oldChartFrame = ui->chartView;
@@ -46,6 +44,7 @@ MainWindow::MainWindow(QWidget *parent)
         QLayout* parentLayout = oldChartFrame->parentWidget()->layout();
         parentLayout->replaceWidget(oldChartFrame, chartView);
     } else {
+        // Jeśli nie ma layoutu, po prostu dodaj do rodzica
         chartView->setParent(oldChartFrame->parentWidget());
     }
 
@@ -78,57 +77,58 @@ MainWindow::MainWindow(QWidget *parent)
         if (miasto.isEmpty()) return;
 
         miasto[0] = miasto[0].toUpper(); // pierwsza litera wielka
-        ui->buttonPobierzStacje->setEnabled(false); // Disable button during fetch
 
-        apiWorker->fetchStations("https://api.gios.gov.pl/pjp-api/rest/station/findAll");
-    });
+        QNetworkRequest request(QUrl("https://api.gios.gov.pl/pjp-api/rest/station/findAll"));
+        QNetworkReply *reply = manager->get(request);
 
-    connect(apiWorker, &ApiWorker::stationsFetched, this, [=](const QByteArray &data, QNetworkReply::NetworkError error, const QString &errorString) {
-        ui->buttonPobierzStacje->setEnabled(true); // Re-enable button
+        connect(reply, &QNetworkReply::finished, [=]() {
+            if (reply->error() != QNetworkReply::NoError) {
+                ui->textWyniki->setPlainText("Błąd sieci: " + reply->errorString());
+                reply->deleteLater();
+                return;
+            }
 
-        if (error != QNetworkReply::NoError) {
-            ui->textWyniki->setPlainText("Błąd sieci: " + errorString);
-            return;
-        }
+            QByteArray response = reply->readAll();
+            QJsonDocument doc = QJsonDocument::fromJson(response);
 
-        QJsonDocument doc = QJsonDocument::fromJson(data);
+            if (!doc.isArray()) {
+                ui->comboStacje->clear();
+                ui->comboStacje->addItem("Brak wyników");
+                reply->deleteLater();
+                return;
+            }
 
-        if (!doc.isArray()) {
+            QJsonArray stacje = doc.array();
+
+            // Zapisz wszystkie stacje do pliku lokalnego
+            QJsonDocument allStationsDoc(stacje);
+            QDir().mkpath("offline");  // folder offline
+            QFile file("offline/stacje.json");
+            if (file.open(QIODevice::WriteOnly)) {
+                file.write(allStationsDoc.toJson());
+                file.close();
+                qDebug() << "Zapisano stacje.json";
+            }
+
             ui->comboStacje->clear();
-            ui->comboStacje->addItem("Brak wyników");
-            return;
-        }
 
-        QJsonArray stacje = doc.array();
-
-        // Zapisz wszystkie stacje do pliku lokalnego
-        QJsonDocument allStationsDoc(stacje);
-        QDir().mkpath("offline");  // folder offline
-        QFile file("offline/stacje.json");
-        if (file.open(QIODevice::WriteOnly)) {
-            file.write(allStationsDoc.toJson());
-            file.close();
-            qDebug() << "Zapisano stacje.json";
-        }
-
-        ui->comboStacje->clear();
-
-        QString miasto = ui->inputMiasto->text().trimmed();
-        miasto[0] = miasto[0].toUpper();
-        for (const QJsonValue &val : stacje) {
-            QJsonObject ob = val.toObject();
-            if (ob.contains("city") && ob["city"].isObject()) {
-                QString cityName = ob["city"].toObject()["name"].toString();
-                if (cityName == miasto) {
-                    QString nazwa = ob["stationName"].toString();
-                    int id = ob["id"].toInt();
-                    ui->comboStacje->addItem(nazwa, id);
+            for (const QJsonValue &val : stacje) {
+                QJsonObject ob = val.toObject();
+                if (ob.contains("city") && ob["city"].isObject()) {
+                    QString cityName = ob["city"].toObject()["name"].toString();
+                    if (cityName == miasto) {
+                        QString nazwa = ob["stationName"].toString();
+                        int id = ob["id"].toInt();
+                        ui->comboStacje->addItem(nazwa, id);
+                    }
                 }
             }
-        }
 
-        if (ui->comboStacje->count() == 0)
-            ui->comboStacje->addItem("Brak wyników");
+            if (ui->comboStacje->count() == 0)
+                ui->comboStacje->addItem("Brak wyników");
+
+            reply->deleteLater();
+        });
     });
 
     // Obsługa zmiany stacji - pobieranie sensorów
@@ -137,12 +137,12 @@ MainWindow::MainWindow(QWidget *parent)
 
         int stationId = ui->comboStacje->currentData().toInt();
         QString endpoint = "https://api.gios.gov.pl/pjp-api/rest/station/sensors/" + QString::number(stationId);
-        apiWorker->fetchSensors(endpoint);
-    });
+        QUrl url(endpoint);
+        QNetworkRequest request(url);
+        QNetworkReply *reply = manager->get(request);
 
-    connect(apiWorker, &ApiWorker::sensorsFetched, this, [=](const QByteArray &data, QNetworkReply::NetworkError error, const QString &errorString) {
-        if (error != QNetworkReply::NoError) {
-            ui->textWyniki->setPlainText("Błąd sieci: " + errorString);
+        connect(reply, &QNetworkReply::errorOccurred, [=](QNetworkReply::NetworkError error) {
+            ui->textWyniki->setPlainText("Błąd sieci: " + reply->errorString());
 
             // Próba wczytania danych offline
             int stationId = ui->comboStacje->currentData().toInt();
@@ -169,39 +169,49 @@ MainWindow::MainWindow(QWidget *parent)
                     file.close();
                 }
             }
-            return;
-        }
+        });
 
-        QJsonDocument doc = QJsonDocument::fromJson(data);
+        connect(reply, &QNetworkReply::finished, [=]() {
+            if (reply->error() != QNetworkReply::NoError) {
+                reply->deleteLater();
+                return; // Error handling is done in errorOccurred
+            }
 
-        if (!doc.isArray()) {
+            QByteArray response = reply->readAll();
+            QJsonDocument doc = QJsonDocument::fromJson(response);
+
+            if (!doc.isArray()) {
+                ui->comboSensory->clear();
+                ui->comboSensory->addItem("Brak czujników");
+                reply->deleteLater();
+                return;
+            }
+
+            QJsonArray sensory = doc.array();
+
+            // Zapisz sensory do pliku offline
+            int stationId = ui->comboStacje->currentData().toInt();
+            QJsonDocument docToSave(sensory);
+            QString filename = "offline/sensory_" + QString::number(stationId) + ".json";
+            QFile file(filename);
+            if (file.open(QIODevice::WriteOnly)) {
+                file.write(docToSave.toJson());
+                file.close();
+            }
+
             ui->comboSensory->clear();
-            ui->comboSensory->addItem("Brak czujników");
-            return;
-        }
+            for (const QJsonValue &val : sensory) {
+                QJsonObject ob = val.toObject();
+                QString paramName = ob["param"].toObject()["paramName"].toString();
+                int sensorId = ob["id"].toInt();
+                ui->comboSensory->addItem(paramName, sensorId);
+            }
 
-        QJsonArray sensory = doc.array();
+            if (ui->comboSensory->count() == 0)
+                ui->comboSensory->addItem("Brak czujników");
 
-        // Zapisz sensory do pliku offline
-        int stationId = ui->comboStacje->currentData().toInt();
-        QJsonDocument docToSave(sensory);
-        QString filename = "offline/sensory_" + QString::number(stationId) + ".json";
-        QFile file(filename);
-        if (file.open(QIODevice::WriteOnly)) {
-            file.write(docToSave.toJson());
-            file.close();
-        }
-
-        ui->comboSensory->clear();
-        for (const QJsonValue &val : sensory) {
-            QJsonObject ob = val.toObject();
-            QString paramName = ob["param"].toObject()["paramName"].toString();
-            int sensorId = ob["id"].toInt();
-            ui->comboSensory->addItem(paramName, sensorId);
-        }
-
-        if (ui->comboSensory->count() == 0)
-            ui->comboSensory->addItem("Brak czujników");
+            reply->deleteLater();
+        });
     });
 
     // Obsługa zmian wyboru zakresu dat
@@ -294,12 +304,136 @@ MainWindow::MainWindow(QWidget *parent)
         if (sensorId == 0) return;
 
         QString endpoint = "https://api.gios.gov.pl/pjp-api/rest/data/getData/" + QString::number(sensorId);
-        apiWorker->fetchData(endpoint);
-    });
+        QUrl url(endpoint);
+        QNetworkRequest request(url);
+        QNetworkReply *reply = manager->get(request);
 
-    connect(apiWorker, &ApiWorker::dataFetched, this, [=](const QByteArray &data, QNetworkReply::NetworkError error, const QString &errorString) {
-        if (error != QNetworkReply::NoError) {
-            ui->textWyniki->setPlainText("Błąd sieci: " + errorString + "\nPróba wczytania danych offline...");
+        connect(reply, &QNetworkReply::finished, [=]() {
+            if (reply->error() != QNetworkReply::NoError) {
+                ui->textWyniki->setPlainText("Błąd sieci: " + reply->errorString());
+                reply->deleteLater();
+                return;
+            }
+
+            QByteArray response = reply->readAll();
+            QJsonDocument doc = QJsonDocument::fromJson(response);
+            QJsonObject root = doc.object();
+
+            // Zapisz dane do pliku offline
+            int sensorId = ui->comboSensory->currentData().toInt();
+            QString filename = "offline/dane_" + QString::number(sensorId) + ".json";
+            QFile file(filename);
+            if (file.open(QIODevice::WriteOnly)) {
+                file.write(doc.toJson());
+                file.close();
+            }
+
+            QJsonArray values = root["values"].toArray();
+
+            // Ustalanie zakresu dat
+            QString zakres = ui->comboZakres->currentText();
+            QDateTime cutoff;
+            QDate fromDate, toDate;
+            bool customRange = (zakres == "Własny zakres");
+
+            if (customRange) {
+                fromDate = ui->dateOd->date();
+                toDate = ui->dateDo->date();
+            } else if (zakres == "Ostatnia doba") {
+                cutoff = QDateTime::currentDateTime().addDays(-1);
+            } else if (zakres == "Ostatni tydzień") {
+                cutoff = QDateTime::currentDateTime().addDays(-7);
+            } else if (zakres == "Ostatni miesiąc") {
+                cutoff = QDateTime::currentDateTime().addMonths(-1);
+            } else if (zakres == "Ostatni rok") {
+                cutoff = QDateTime::currentDateTime().addYears(-1);
+            }
+
+            QLineSeries *series = new QLineSeries();
+            series->setName(ui->comboSensory->currentText());
+
+            QString output;
+
+            // Zmienne do statystyk
+            double minValue = std::numeric_limits<double>::max();
+            double maxValue = std::numeric_limits<double>::min();
+            double sum = 0.0;
+            int count = 0;
+            QDateTime minTime, maxTime;
+
+            for (const QJsonValue &val : values) {
+                QJsonObject ob = val.toObject();
+                QDateTime dateTime = QDateTime::fromString(ob["date"].toString(), Qt::ISODate);
+                if (!dateTime.isValid()) continue;
+
+                if (customRange) {
+                    if (dateTime.date() < fromDate || dateTime.date() > toDate) continue;
+                } else {
+                    if (dateTime < cutoff) continue;
+                }
+
+                // Dodaj do wyniku tekstowego
+                QString valueStr = ob["value"].isNull() ? "brak danych" : QString::number(ob["value"].toDouble());
+                output += dateTime.toString("dd.MM.yyyy hh:mm") + " → " + valueStr + "\n";
+
+                // Dodaj do wykresu i statystyk
+                if (!ob["value"].isNull()) {
+                    double value = ob["value"].toDouble();
+                    series->append(dateTime.toMSecsSinceEpoch(), value);
+
+                    // Statystyki
+                    if (value < minValue) {
+                        minValue = value;
+                        minTime = dateTime;
+                    }
+                    if (value > maxValue) {
+                        maxValue = value;
+                        maxTime = dateTime;
+                    }
+                    sum += value;
+                    count++;
+                }
+            }
+
+            // Dodaj statystyki do wyniku
+            if (count > 0) {
+                double average = sum / count;
+                output += "\n📊 Statystyki:\n";
+                output += "🔺 Maksimum: " + QString::number(maxValue) + " (" + maxTime.toString("dd.MM.yyyy hh:mm") + ")\n";
+                output += "🔻 Minimum: " + QString::number(minValue) + " (" + minTime.toString("dd.MM.yyyy hh:mm") + ")\n";
+                output += "📈 Średnia: " + QString::number(average, 'f', 2) + "\n";
+            }
+
+            ui->textWyniki->setPlainText(output);
+
+            // Tworzenie wykresu
+            QChart *chart = new QChart();
+            chart->addSeries(series);
+            chart->setTitle("Pomiary " + ui->comboSensory->currentText() + " - " + ui->comboStacje->currentText());
+
+            QDateTimeAxis *axisX = new QDateTimeAxis();
+            if (zakres == "Ostatni rok") {
+                axisX->setFormat("MM.yyyy");
+            } else {
+                axisX->setFormat("dd.MM.yyyy");
+            }
+            axisX->setTitleText("Data pomiaru");
+
+            QValueAxis *axisY = new QValueAxis();
+            axisY->setLabelFormat("%.1f");
+            axisY->setTitleText(ui->comboSensory->currentText());
+
+            chart->addAxis(axisX, Qt::AlignBottom);
+            chart->addAxis(axisY, Qt::AlignLeft);
+            series->attachAxis(axisX);
+            series->attachAxis(axisY);
+
+            chartView->setChart(chart);
+            reply->deleteLater();
+        });
+
+        connect(reply, &QNetworkReply::errorOccurred, [=]() {
+            ui->textWyniki->setPlainText("Błąd sieci: " + reply->errorString() + "\nPróba wczytania danych offline...");
 
             // Próba wczytania danych offline
             int sensorId = ui->comboSensory->currentData().toInt();
@@ -343,7 +477,6 @@ MainWindow::MainWindow(QWidget *parent)
                     double sum = 0.0;
                     int count = 0;
                     QDateTime minTime, maxTime;
-                    QVector<QPair<QDateTime, double>> trendData;
 
                     for (const QJsonValue &val : values) {
                         QJsonObject ob = val.toObject();
@@ -362,7 +495,6 @@ MainWindow::MainWindow(QWidget *parent)
                         if (!ob["value"].isNull()) {
                             double value = ob["value"].toDouble();
                             series->append(dateTime.toMSecsSinceEpoch(), value);
-                            trendData.append({dateTime, value});
 
                             // Statystyki
                             if (value < minValue) {
@@ -381,16 +513,14 @@ MainWindow::MainWindow(QWidget *parent)
                     // Dodaj statystyki do wyniku
                     if (count > 0) {
                         double average = sum / count;
-                        QString trend = calculateTrend(trendData);
                         output += "\n📊 Statystyki:\n";
                         output += "🔺 Maksimum: " + QString::number(maxValue) + " (" + maxTime.toString("dd.MM.yyyy hh:mm") + ")\n";
                         output += "🔻 Minimum: " + QString::number(minValue) + " (" + minTime.toString("dd.MM.yyyy hh:mm") + ")\n";
                         output += "📈 Średnia: " + QString::number(average, 'f', 2) + "\n";
-                        output += "📉 Trend: " + trend + "\n";
                     }
 
                     ui->textWyniki->setPlainText(output);
-
+                    ui->textWyniki->setPlainText(output);
                     // Tworzenie wykresu
                     QChart *chart = new QChart();
                     chart->addSeries(series);
@@ -421,167 +551,13 @@ MainWindow::MainWindow(QWidget *parent)
             } else {
                 ui->textWyniki->setPlainText("Brak danych offline dla wybranego sensora.");
             }
-            return;
-        }
 
-        QJsonDocument doc = QJsonDocument::fromJson(data);
-        QJsonObject root = doc.object();
-
-        // Zapisz dane do pliku offline
-        int sensorId = ui->comboSensory->currentData().toInt();
-        QString filename = "offline/dane_" + QString::number(sensorId) + ".json";
-        QFile file(filename);
-        if (file.open(QIODevice::WriteOnly)) {
-            file.write(doc.toJson());
-            file.close();
-        }
-
-        QJsonArray values = root["values"].toArray();
-
-        // Ustalanie zakresu dat
-        QString zakres = ui->comboZakres->currentText();
-        QDateTime cutoff;
-        QDate fromDate, toDate;
-        bool customRange = (zakres == "Własny zakres");
-
-        if (customRange) {
-            fromDate = ui->dateOd->date();
-            toDate = ui->dateDo->date();
-        } else if (zakres == "Ostatnia doba") {
-            cutoff = QDateTime::currentDateTime().addDays(-1);
-        } else if (zakres == "Ostatni tydzień") {
-            cutoff = QDateTime::currentDateTime().addDays(-7);
-        } else if (zakres == "Ostatni miesiąc") {
-            cutoff = QDateTime::currentDateTime().addMonths(-1);
-        } else if (zakres == "Ostatni rok") {
-            cutoff = QDateTime::currentDateTime().addYears(-1);
-        }
-
-        QLineSeries *series = new QLineSeries();
-        series->setName(ui->comboSensory->currentText());
-
-        QString output;
-
-        // Zmienne do statystyk
-        double minValue = std::numeric_limits<double>::max();
-        double maxValue = std::numeric_limits<double>::min();
-        double sum = 0.0;
-        int count = 0;
-        QDateTime minTime, maxTime;
-        QVector<QPair<QDateTime, double>> trendData;
-
-        for (const QJsonValue &val : values) {
-            QJsonObject ob = val.toObject();
-            QDateTime dateTime = QDateTime::fromString(ob["date"].toString(), Qt::ISODate);
-            if (!dateTime.isValid()) continue;
-
-            if (customRange) {
-                if (dateTime.date() < fromDate || dateTime.date() > toDate) continue;
-            } else {
-                if (dateTime < cutoff) continue;
-            }
-
-            // Dodaj do wyniku tekstowego
-            QString valueStr = ob["value"].isNull() ? "brak danych" : QString::number(ob["value"].toDouble());
-            output += dateTime.toString("dd.MM.yyyy hh:mm") + " → " + valueStr + "\n";
-
-            // Dodaj do wykresu i statystyk
-            if (!ob["value"].isNull()) {
-                double value = ob["value"].toDouble();
-                series->append(dateTime.toMSecsSinceEpoch(), value);
-                trendData.append({dateTime, value});
-
-                // Statystyki
-                if (value < minValue) {
-                    minValue = value;
-                    minTime = dateTime;
-                }
-                if (value > maxValue) {
-                    maxValue = value;
-                    maxTime = dateTime;
-                }
-                sum += value;
-                count++;
-            }
-        }
-
-        // Dodaj statystyki do wyniku
-        if (count > 0) {
-            double average = sum / count;
-            QString trend = calculateTrend(trendData);
-            output += "\n📊 Statystyki:\n";
-            output += "🔺 Maksimum: " + QString::number(maxValue) + " (" + maxTime.toString("dd.MM.yyyy hh:mm") + ")\n";
-            output += "🔻 Minimum: " + QString::number(minValue) + " (" + minTime.toString("dd.MM.yyyy hh:mm") + ")\n";
-            output += "📈 Średnia: " + QString::number(average, 'f', 2) + "\n";
-            output += "📉 Trend: " + trend + "\n";
-        }
-
-        ui->textWyniki->setPlainText(output);
-
-        // Tworzenie wykresu
-        QChart *chart = new QChart();
-        chart->addSeries(series);
-        chart->setTitle("Pomiary " + ui->comboSensory->currentText() + " - " + ui->comboStacje->currentText());
-
-        QDateTimeAxis *axisX = new QDateTimeAxis();
-        if (zakres == "Ostatni rok") {
-            axisX->setFormat("MM.yyyy");
-        } else {
-            axisX->setFormat("dd.MM.yyyy");
-        }
-        axisX->setTitleText("Data pomiaru");
-
-        QValueAxis *axisY = new QValueAxis();
-        axisY->setLabelFormat("%.1f");
-        axisY->setTitleText(ui->comboSensory->currentText());
-
-        chart->addAxis(axisX, Qt::AlignBottom);
-        chart->addAxis(axisY, Qt::AlignLeft);
-        series->attachAxis(axisX);
-        series->attachAxis(axisY);
-
-        chartView->setChart(chart);
+            reply->deleteLater();
+        });
     });
 }
 
-/**
- * @brief Destroys the MainWindow and cleans up resources.
- */
 MainWindow::~MainWindow()
 {
-    apiThread->quit();
-    apiThread->wait();
-    delete apiWorker;
     delete ui;
-}
-
-/**
- * @brief Calculates the trend of the measurement data using linear regression.
- * @param data Vector of pairs containing timestamp and measurement value.
- * @return QString describing the trend ("Rosnący", "Malejący", or "Stabilny").
- */
-QString MainWindow::calculateTrend(const QVector<QPair<QDateTime, double>> &data) {
-    if (data.size() < 2) return "Brak danych do analizy trendu";
-
-    // Simple linear regression: y = mx + b
-    double n = data.size();
-    double sumX = 0, sumY = 0, sumXY = 0, sumXX = 0;
-
-    // Use timestamps as X values (in seconds since epoch)
-    for (int i = 0; i < n; ++i) {
-        double x = data[i].first.toMSecsSinceEpoch() / 1000.0; // Convert to seconds
-        double y = data[i].second;
-        sumX += x;
-        sumY += y;
-        sumXY += x * y;
-        sumXX += x * x;
-    }
-
-    // Calculate slope (m)
-    double slope = (n * sumXY - sumX * sumY) / (n * sumXX - sumX * sumX);
-
-    // Determine trend based on slope
-    if (slope > 0.01) return "Rosnący";
-    else if (slope < -0.01) return "Malejący";
-    else return "Stabilny";
 }

@@ -1,87 +1,17 @@
 # ninja log v6
-3692	3859	7667023040867228	stacje_radarowe.exe	bff38a4c1560dc59
-16	127	7667026561707672	stacje_radarowe_autogen/timestamp	3d877f9ad25409c1
-127	3692	7667023005209162	CMakeFiles/stacje_radarowe.dir/mainwindow.cpp.obj	388f7175d65801be
-16	127	7667026561707672	F:/stacje radarowe/stacje_radarowe/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/stacje_radarowe_autogen/timestamp	3d877f9ad25409c1
-16	127	7667026561707672	stacje_radarowe_autogen/mocs_compilation.cpp	3d877f9ad25409c1
-846	5004	7666837042052783	CMakeFiles/stacje_radarowe.dir/stacje_radarowe_autogen/mocs_compilation.cpp.obj	d4d2bf6edb6d08e6
-16	127	7667026561707672	F:/stacje radarowe/stacje_radarowe/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/stacje_radarowe_autogen/mocs_compilation.cpp	3d877f9ad25409c1
-848	5043	7666837042072788	CMakeFiles/stacje_radarowe.dir/main.cpp.obj	78182ef86ac8129e
-23	126	7667027320231575	stacje_radarowe_autogen/timestamp	3d877f9ad25409c1
-23	126	7667027320231575	stacje_radarowe_autogen/mocs_compilation.cpp	3d877f9ad25409c1
-23	126	7667027320231575	F:/stacje radarowe/stacje_radarowe/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/stacje_radarowe_autogen/timestamp	3d877f9ad25409c1
-23	126	7667027320231575	F:/stacje radarowe/stacje_radarowe/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/stacje_radarowe_autogen/mocs_compilation.cpp	3d877f9ad25409c1
-126	4449	7667027321268206	CMakeFiles/stacje_radarowe.dir/mainwindow.cpp.obj	388f7175d65801be
-4450	4672	7667027364502859	stacje_radarowe.exe	bff38a4c1560dc59
-9	122	7667030721973921	stacje_radarowe_autogen/timestamp	3d877f9ad25409c1
-9	122	7667030721973921	stacje_radarowe_autogen/mocs_compilation.cpp	3d877f9ad25409c1
-9	122	7667030721973921	F:/stacje radarowe/stacje_radarowe/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/stacje_radarowe_autogen/timestamp	3d877f9ad25409c1
-9	122	7667030721973921	F:/stacje radarowe/stacje_radarowe/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/stacje_radarowe_autogen/mocs_compilation.cpp	3d877f9ad25409c1
-123	4657	7667030723113583	CMakeFiles/stacje_radarowe.dir/mainwindow.cpp.obj	388f7175d65801be
-4657	4869	7667030768459769	stacje_radarowe.exe	bff38a4c1560dc59
-6	90	7667035623843081	stacje_radarowe_autogen/timestamp	3d877f9ad25409c1
-6	90	7667035623843081	stacje_radarowe_autogen/mocs_compilation.cpp	3d877f9ad25409c1
-6	90	7667035623843081	F:/stacje radarowe/stacje_radarowe/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/stacje_radarowe_autogen/timestamp	3d877f9ad25409c1
-6	90	7667035623843081	F:/stacje radarowe/stacje_radarowe/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/stacje_radarowe_autogen/mocs_compilation.cpp	3d877f9ad25409c1
-19	138	7667036701943286	stacje_radarowe_autogen/timestamp	3d877f9ad25409c1
-19	138	7667036701943286	stacje_radarowe_autogen/mocs_compilation.cpp	3d877f9ad25409c1
-19	138	7667036701943286	F:/stacje radarowe/stacje_radarowe/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/stacje_radarowe_autogen/timestamp	3d877f9ad25409c1
-19	138	7667036701943286	F:/stacje radarowe/stacje_radarowe/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/stacje_radarowe_autogen/mocs_compilation.cpp	3d877f9ad25409c1
-19	180	7667036879568703	stacje_radarowe_autogen/timestamp	3d877f9ad25409c1
-19	180	7667036879568703	stacje_radarowe_autogen/mocs_compilation.cpp	3d877f9ad25409c1
-19	180	7667036879568703	F:/stacje radarowe/stacje_radarowe/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/stacje_radarowe_autogen/timestamp	3d877f9ad25409c1
-19	180	7667036879568703	F:/stacje radarowe/stacje_radarowe/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/stacje_radarowe_autogen/mocs_compilation.cpp	3d877f9ad25409c1
-181	4847	7667036881181379	CMakeFiles/stacje_radarowe.dir/mainwindow.cpp.obj	388f7175d65801be
-4847	5067	7667036927848767	stacje_radarowe.exe	bff38a4c1560dc59
-5	91	7667039137337041	stacje_radarowe_autogen/timestamp	3d877f9ad25409c1
-5	91	7667039137337041	stacje_radarowe_autogen/mocs_compilation.cpp	3d877f9ad25409c1
-5	91	7667039137337041	F:/stacje radarowe/stacje_radarowe/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/stacje_radarowe_autogen/timestamp	3d877f9ad25409c1
-5	91	7667039137337041	F:/stacje radarowe/stacje_radarowe/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/stacje_radarowe_autogen/mocs_compilation.cpp	3d877f9ad25409c1
-20	127	7667040034978618	stacje_radarowe_autogen/timestamp	3d877f9ad25409c1
-20	127	7667040034978618	stacje_radarowe_autogen/mocs_compilation.cpp	3d877f9ad25409c1
-20	127	7667040034978618	F:/stacje radarowe/stacje_radarowe/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/stacje_radarowe_autogen/timestamp	3d877f9ad25409c1
-20	127	7667040034978618	F:/stacje radarowe/stacje_radarowe/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/stacje_radarowe_autogen/mocs_compilation.cpp	3d877f9ad25409c1
-128	4679	7667040036062905	CMakeFiles/stacje_radarowe.dir/mainwindow.cpp.obj	388f7175d65801be
-4679	4895	7667040081577860	stacje_radarowe.exe	bff38a4c1560dc59
-6	115	7667040659115795	stacje_radarowe_autogen/timestamp	3d877f9ad25409c1
-6	115	7667040659115795	stacje_radarowe_autogen/mocs_compilation.cpp	3d877f9ad25409c1
-6	115	7667040659115795	F:/stacje radarowe/stacje_radarowe/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/stacje_radarowe_autogen/timestamp	3d877f9ad25409c1
-6	115	7667040659115795	F:/stacje radarowe/stacje_radarowe/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/stacje_radarowe_autogen/mocs_compilation.cpp	3d877f9ad25409c1
-116	3672	7667040660213508	CMakeFiles/stacje_radarowe.dir/mainwindow.cpp.obj	388f7175d65801be
-3672	3853	7667040695775931	stacje_radarowe.exe	bff38a4c1560dc59
-18	114	7667046916218772	stacje_radarowe_autogen/timestamp	3d877f9ad25409c1
-18	114	7667046916218772	stacje_radarowe_autogen/mocs_compilation.cpp	3d877f9ad25409c1
-18	114	7667046916218772	F:/stacje radarowe/stacje_radarowe/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/stacje_radarowe_autogen/timestamp	3d877f9ad25409c1
-18	114	7667046916218772	F:/stacje radarowe/stacje_radarowe/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/stacje_radarowe_autogen/mocs_compilation.cpp	3d877f9ad25409c1
-23	146	7667048098558287	stacje_radarowe_autogen/timestamp	3d877f9ad25409c1
-23	146	7667048098558287	stacje_radarowe_autogen/mocs_compilation.cpp	3d877f9ad25409c1
-23	146	7667048098558287	F:/stacje radarowe/stacje_radarowe/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/stacje_radarowe_autogen/timestamp	3d877f9ad25409c1
-23	146	7667048098558287	F:/stacje radarowe/stacje_radarowe/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/stacje_radarowe_autogen/mocs_compilation.cpp	3d877f9ad25409c1
-19	132	7667048605788801	stacje_radarowe_autogen/timestamp	3d877f9ad25409c1
-19	132	7667048605788801	stacje_radarowe_autogen/mocs_compilation.cpp	3d877f9ad25409c1
-19	132	7667048605788801	F:/stacje radarowe/stacje_radarowe/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/stacje_radarowe_autogen/timestamp	3d877f9ad25409c1
-19	132	7667048605788801	F:/stacje radarowe/stacje_radarowe/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/stacje_radarowe_autogen/mocs_compilation.cpp	3d877f9ad25409c1
-133	5143	7667048606923711	CMakeFiles/stacje_radarowe.dir/mainwindow.cpp.obj	388f7175d65801be
-5143	5378	7667048657021699	stacje_radarowe.exe	bff38a4c1560dc59
-8	114	7667049763054598	stacje_radarowe_autogen/timestamp	3d877f9ad25409c1
-8	114	7667049763054598	stacje_radarowe_autogen/mocs_compilation.cpp	3d877f9ad25409c1
-8	114	7667049763054598	F:/stacje radarowe/stacje_radarowe/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/stacje_radarowe_autogen/timestamp	3d877f9ad25409c1
-8	114	7667049763054598	F:/stacje radarowe/stacje_radarowe/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/stacje_radarowe_autogen/mocs_compilation.cpp	3d877f9ad25409c1
-25	139	7667053589046617	stacje_radarowe_autogen/timestamp	3d877f9ad25409c1
-25	139	7667053589046617	stacje_radarowe_autogen/mocs_compilation.cpp	3d877f9ad25409c1
-25	139	7667053589046617	F:/stacje radarowe/stacje_radarowe/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/stacje_radarowe_autogen/timestamp	3d877f9ad25409c1
-25	139	7667053589046617	F:/stacje radarowe/stacje_radarowe/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/stacje_radarowe_autogen/mocs_compilation.cpp	3d877f9ad25409c1
-140	4950	7667053590187907	CMakeFiles/stacje_radarowe.dir/mainwindow.cpp.obj	388f7175d65801be
-4950	5168	7667053638292017	stacje_radarowe.exe	bff38a4c1560dc59
-9	132	7667056057108562	stacje_radarowe_autogen/timestamp	3d877f9ad25409c1
-9	132	7667056057108562	stacje_radarowe_autogen/mocs_compilation.cpp	3d877f9ad25409c1
-9	132	7667056057108562	F:/stacje radarowe/stacje_radarowe/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/stacje_radarowe_autogen/timestamp	3d877f9ad25409c1
-9	132	7667056057108562	F:/stacje radarowe/stacje_radarowe/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/stacje_radarowe_autogen/mocs_compilation.cpp	3d877f9ad25409c1
-132	4112	7667056058342437	CMakeFiles/stacje_radarowe.dir/mainwindow.cpp.obj	388f7175d65801be
-4112	4336	7667056098139920	stacje_radarowe.exe	bff38a4c1560dc59
-8	112	7667077612089294	stacje_radarowe_autogen/timestamp	3d877f9ad25409c1
-8	112	7667077612089294	stacje_radarowe_autogen/mocs_compilation.cpp	3d877f9ad25409c1
-8	112	7667077612089294	F:/stacje radarowe/stacje_radarowe/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/stacje_radarowe_autogen/timestamp	3d877f9ad25409c1
-8	112	7667077612089294	F:/stacje radarowe/stacje_radarowe/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/stacje_radarowe_autogen/mocs_compilation.cpp	3d877f9ad25409c1
-113	3931	7667077613139697	CMakeFiles/stacje_radarowe.dir/mainwindow.cpp.obj	388f7175d65801be
 3931	4115	7667077651322784	stacje_radarowe.exe	bff38a4c1560dc59
+9	981	7673861561303974	stacje_radarowe_autogen/timestamp	3d877f9ad25409c1
+113	3931	7667077613139697	CMakeFiles/stacje_radarowe.dir/mainwindow.cpp.obj	388f7175d65801be
+9	981	7673861561303974	F:/stacje radarowe/stacje_radarowe/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/stacje_radarowe_autogen/timestamp	3d877f9ad25409c1
+9	981	7673861561303974	stacje_radarowe_autogen/mocs_compilation.cpp	3d877f9ad25409c1
+982	5899	7673861561885376	CMakeFiles/stacje_radarowe.dir/stacje_radarowe_autogen/mocs_compilation.cpp.obj	d4d2bf6edb6d08e6
+9	981	7673861561303974	F:/stacje radarowe/stacje_radarowe/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/stacje_radarowe_autogen/mocs_compilation.cpp	3d877f9ad25409c1
+985	5875	7673861561906549	CMakeFiles/stacje_radarowe.dir/main.cpp.obj	78182ef86ac8129e
+18	1371	7673864831966442	stacje_radarowe_autogen/timestamp	3d877f9ad25409c1
+18	1371	7673864831966442	stacje_radarowe_autogen/mocs_compilation.cpp	3d877f9ad25409c1
+18	1371	7673864831966442	F:/stacje radarowe/stacje_radarowe/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/stacje_radarowe_autogen/timestamp	3d877f9ad25409c1
+18	1371	7673864831966442	F:/stacje radarowe/stacje_radarowe/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/stacje_radarowe_autogen/mocs_compilation.cpp	3d877f9ad25409c1
+1374	5913	7673864832706436	CMakeFiles/stacje_radarowe.dir/main.cpp.obj	78182ef86ac8129e
+1371	5917	7673864832676439	CMakeFiles/stacje_radarowe.dir/stacje_radarowe_autogen/mocs_compilation.cpp.obj	d4d2bf6edb6d08e6
+1376	6325	7673864832726440	CMakeFiles/stacje_radarowe.dir/mainwindow.cpp.obj	388f7175d65801be
+6326	6793	7673864882221797	stacje_radarowe.exe	bff38a4c1560dc59

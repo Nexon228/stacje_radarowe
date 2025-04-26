@@ -2864,6 +2864,22 @@
         "stationName": "Przemyśl, ul. Grunwaldzka"
     },
     {
+        "addressStreet": "Orkana",
+        "city": {
+            "commune": {
+                "communeName": "Rabka-Zdrój",
+                "districtName": "nowotarski",
+                "provinceName": "MAŁOPOLSKIE"
+            },
+            "id": 767,
+            "name": "Rabka-Zdrój"
+        },
+        "gegrLat": "49.608647",
+        "gegrLon": "19.966008",
+        "id": 10446,
+        "stationName": "Rabka-Zdrój, ul. Orkana"
+    },
+    {
         "addressStreet": "ul. Wojska Polskiego 8",
         "city": {
             "commune": {
