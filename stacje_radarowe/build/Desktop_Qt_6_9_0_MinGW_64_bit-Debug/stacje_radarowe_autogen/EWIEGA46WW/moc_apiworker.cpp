@@ -42,31 +42,17 @@ template <> constexpr inline auto ApiWorker::qt_create_metaobjectdata<qt_meta_ta
         "ApiWorker",
         "stationsFetched",
         "",
-        "data",
-        "stationDataFetched",
-        "sensorDataFetched",
-        "onReplyFinished",
-        "QNetworkReply*",
-        "reply"
+        "stations",
+        "onStationsFetched"
     };
 
     QtMocHelpers::UintData qt_methods {
         // Signal 'stationsFetched'
-        QtMocHelpers::SignalData<void(QByteArray)>(1, 2, QMC::AccessPublic, QMetaType::Void, {{
-            { QMetaType::QByteArray, 3 },
+        QtMocHelpers::SignalData<void(const QJsonArray &)>(1, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { QMetaType::QJsonArray, 3 },
         }}),
-        // Signal 'stationDataFetched'
-        QtMocHelpers::SignalData<void(QByteArray)>(4, 2, QMC::AccessPublic, QMetaType::Void, {{
-            { QMetaType::QByteArray, 3 },
-        }}),
-        // Signal 'sensorDataFetched'
-        QtMocHelpers::SignalData<void(QByteArray)>(5, 2, QMC::AccessPublic, QMetaType::Void, {{
-            { QMetaType::QByteArray, 3 },
-        }}),
-        // Slot 'onReplyFinished'
-        QtMocHelpers::SlotData<void(QNetworkReply *)>(6, 2, QMC::AccessPrivate, QMetaType::Void, {{
-            { 0x80000000 | 7, 8 },
-        }}),
+        // Slot 'onStationsFetched'
+        QtMocHelpers::SlotData<void()>(4, 2, QMC::AccessPrivate, QMetaType::Void),
     };
     QtMocHelpers::UintData qt_properties {
     };
@@ -90,31 +76,13 @@ void ApiWorker::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, v
     auto *_t = static_cast<ApiWorker *>(_o);
     if (_c == QMetaObject::InvokeMetaMethod) {
         switch (_id) {
-        case 0: _t->stationsFetched((*reinterpret_cast< std::add_pointer_t<QByteArray>>(_a[1]))); break;
-        case 1: _t->stationDataFetched((*reinterpret_cast< std::add_pointer_t<QByteArray>>(_a[1]))); break;
-        case 2: _t->sensorDataFetched((*reinterpret_cast< std::add_pointer_t<QByteArray>>(_a[1]))); break;
-        case 3: _t->onReplyFinished((*reinterpret_cast< std::add_pointer_t<QNetworkReply*>>(_a[1]))); break;
+        case 0: _t->stationsFetched((*reinterpret_cast< std::add_pointer_t<QJsonArray>>(_a[1]))); break;
+        case 1: _t->onStationsFetched(); break;
         default: ;
         }
     }
-    if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        switch (_id) {
-        default: *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType(); break;
-        case 3:
-            switch (*reinterpret_cast<int*>(_a[1])) {
-            default: *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType(); break;
-            case 0:
-                *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType::fromType< QNetworkReply* >(); break;
-            }
-            break;
-        }
-    }
     if (_c == QMetaObject::IndexOfMethod) {
-        if (QtMocHelpers::indexOfMethod<void (ApiWorker::*)(QByteArray )>(_a, &ApiWorker::stationsFetched, 0))
-            return;
-        if (QtMocHelpers::indexOfMethod<void (ApiWorker::*)(QByteArray )>(_a, &ApiWorker::stationDataFetched, 1))
-            return;
-        if (QtMocHelpers::indexOfMethod<void (ApiWorker::*)(QByteArray )>(_a, &ApiWorker::sensorDataFetched, 2))
+        if (QtMocHelpers::indexOfMethod<void (ApiWorker::*)(const QJsonArray & )>(_a, &ApiWorker::stationsFetched, 0))
             return;
     }
 }
@@ -138,33 +106,21 @@ int ApiWorker::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 4)
+        if (_id < 2)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 4;
+        _id -= 2;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 4)
-            qt_static_metacall(this, _c, _id, _a);
-        _id -= 4;
+        if (_id < 2)
+            *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
+        _id -= 2;
     }
     return _id;
 }
 
 // SIGNAL 0
-void ApiWorker::stationsFetched(QByteArray _t1)
+void ApiWorker::stationsFetched(const QJsonArray & _t1)
 {
     QMetaObject::activate<void>(this, &staticMetaObject, 0, nullptr, _t1);
-}
-
-// SIGNAL 1
-void ApiWorker::stationDataFetched(QByteArray _t1)
-{
-    QMetaObject::activate<void>(this, &staticMetaObject, 1, nullptr, _t1);
-}
-
-// SIGNAL 2
-void ApiWorker::sensorDataFetched(QByteArray _t1)
-{
-    QMetaObject::activate<void>(this, &staticMetaObject, 2, nullptr, _t1);
 }
 QT_WARNING_POP

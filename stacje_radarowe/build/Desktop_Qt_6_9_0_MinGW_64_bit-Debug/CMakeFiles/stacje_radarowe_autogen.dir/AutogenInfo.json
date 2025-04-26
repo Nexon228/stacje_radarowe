@@ -12,31 +12,22 @@
 		"F:/stacje radarowe/stacje_radarowe/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/CMakeFiles/3.30.5/CMakeSystem.cmake",
 		"F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/CMakeSystemSpecificInitialize.cmake",
 		"F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/Platform/Windows-Initialize.cmake",
-		"F:/stacje radarowe/stacje_radarowe/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/CMakeFiles/3.30.5/CMakeCCompiler.cmake",
 		"F:/stacje radarowe/stacje_radarowe/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/CMakeFiles/3.30.5/CMakeCXXCompiler.cmake",
 		"F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/CMakeSystemSpecificInformation.cmake",
 		"F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/CMakeGenericSystem.cmake",
 		"F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/CMakeInitializeConfigs.cmake",
 		"F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/Platform/Windows.cmake",
 		"F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/Platform/WindowsPaths.cmake",
-		"F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/CMakeCInformation.cmake",
-		"F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/CMakeLanguageInformation.cmake",
-		"F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/Compiler/GNU-C.cmake",
-		"F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/Compiler/GNU.cmake",
-		"F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/Compiler/CMakeCommonCompilerMacros.cmake",
-		"F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/Platform/Windows-GNU-C.cmake",
-		"F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/Platform/Windows-GNU.cmake",
-		"F:/stacje radarowe/stacje_radarowe/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/CMakeFiles/3.30.5/CMakeRCCompiler.cmake",
-		"F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/CMakeRCInformation.cmake",
-		"F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/Platform/Windows-windres.cmake",
-		"F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/Platform/Windows-GNU-C-ABI.cmake",
-		"F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/CMakeCommonLanguageInclude.cmake",
 		"F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/CMakeCXXInformation.cmake",
 		"F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/CMakeLanguageInformation.cmake",
 		"F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/Compiler/GNU-CXX.cmake",
 		"F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/Compiler/GNU.cmake",
+		"F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/Compiler/CMakeCommonCompilerMacros.cmake",
 		"F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/Platform/Windows-GNU-CXX.cmake",
 		"F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/Platform/Windows-GNU.cmake",
+		"F:/stacje radarowe/stacje_radarowe/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/CMakeFiles/3.30.5/CMakeRCCompiler.cmake",
+		"F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/CMakeRCInformation.cmake",
+		"F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/Platform/Windows-windres.cmake",
 		"F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/Platform/Windows-GNU-CXX-ABI.cmake",
 		"F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/CMakeCommonLanguageInclude.cmake",
 		"F:/qt/6.9.0/mingw_64/lib/cmake/Qt6/Qt6ConfigVersion.cmake",
@@ -89,9 +80,8 @@
 		"F:/qt/6.9.0/mingw_64/lib/cmake/Qt6/Qt6Dependencies.cmake",
 		"F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/FindThreads.cmake",
 		"F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/CheckLibraryExists.cmake",
-		"F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/CheckIncludeFile.cmake",
-		"F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/CheckCSourceCompiles.cmake",
-		"F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/Internal/CheckSourceCompiles.cmake",
+		"F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/CheckIncludeFileCXX.cmake",
+		"F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/CheckCXXSourceCompiles.cmake",
 		"F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/FindPackageHandleStandardArgs.cmake",
 		"F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/FindPackageMessage.cmake",
 		"F:/qt/6.9.0/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsConfigVersion.cmake",
@@ -385,21 +375,19 @@
 		"F:/qt/6.9.0/mingw_64/lib/cmake/Qt6ChartsPrivate/Qt6ChartsPrivateTargets.cmake",
 		"F:/qt/6.9.0/mingw_64/lib/cmake/Qt6ChartsPrivate/Qt6ChartsPrivateAdditionalTargetInfo.cmake",
 		"F:/qt/6.9.0/mingw_64/lib/cmake/Qt6ChartsPrivate/Qt6ChartsPrivateVersionlessAliasTargets.cmake",
-		"F:/qt/6.9.0/mingw_64/lib/cmake/Qt6Charts/Qt6ChartsVersionlessAliasTargets.cmake"
+		"F:/qt/6.9.0/mingw_64/lib/cmake/Qt6Charts/Qt6ChartsVersionlessAliasTargets.cmake",
+		"F:/stacje radarowe/vcpkg/installed/x64-windows/share/gtest/GTestConfigVersion.cmake",
+		"F:/stacje radarowe/vcpkg/installed/x64-windows/share/gtest/GTestConfig.cmake",
+		"F:/qt/Tools/CMake_64/share/cmake-3.30/Modules/CMakeFindDependencyMacro.cmake",
+		"F:/stacje radarowe/vcpkg/installed/x64-windows/share/gtest/GTestTargets.cmake",
+		"F:/stacje radarowe/vcpkg/installed/x64-windows/share/gtest/GTestTargets-debug.cmake",
+		"F:/stacje radarowe/vcpkg/installed/x64-windows/share/gtest/GTestTargets-release.cmake"
 	],
 	"CMAKE_SOURCE_DIR" : "F:/stacje radarowe/stacje_radarowe",
 	"CROSS_CONFIG" : false,
 	"DEP_FILE" : "F:/stacje radarowe/stacje_radarowe/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/stacje_radarowe_autogen/deps",
 	"DEP_FILE_RULE_NAME" : "stacje_radarowe_autogen/timestamp",
-	"HEADERS" : 
-	[
-		[
-			"F:/stacje radarowe/stacje_radarowe/mainwindow.h",
-			"MU",
-			"EWIEGA46WW/moc_mainwindow.cpp",
-			null
-		]
-	],
+	"HEADERS" : [],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
 	"INCLUDE_DIR" : "F:/stacje radarowe/stacje_radarowe/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/stacje_radarowe_autogen/include",
 	"MOC_COMPILATION_FILE" : "F:/stacje radarowe/stacje_radarowe/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/stacje_radarowe_autogen/mocs_compilation.cpp",
@@ -429,10 +417,10 @@
 	],
 	"MOC_INCLUDES" : 
 	[
-		"F:/qt/6.9.0/mingw_64/include/QtCore",
-		"F:/qt/6.9.0/mingw_64/include",
-		"F:/qt/6.9.0/mingw_64/mkspecs/win32-g++",
 		"F:/qt/6.9.0/mingw_64/include/QtWidgets",
+		"F:/qt/6.9.0/mingw_64/include",
+		"F:/qt/6.9.0/mingw_64/include/QtCore",
+		"F:/qt/6.9.0/mingw_64/mkspecs/win32-g++",
 		"F:/qt/6.9.0/mingw_64/include/QtGui",
 		"F:/qt/6.9.0/mingw_64/include/QtNetwork",
 		"F:/qt/6.9.0/mingw_64/include/QtCharts",
@@ -467,7 +455,10 @@
 	],
 	"MOC_PREDEFS_FILE" : "F:/stacje radarowe/stacje_radarowe/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/stacje_radarowe_autogen/moc_predefs.h",
 	"MOC_RELAXED_MODE" : false,
-	"MOC_SKIP" : [],
+	"MOC_SKIP" : 
+	[
+		"F:/stacje radarowe/stacje_radarowe/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/mainwindow_lib_autogen/include/ui_mainwindow.h"
+	],
 	"MULTI_CONFIG" : false,
 	"PARALLEL" : 16,
 	"PARSE_CACHE_FILE" : "F:/stacje radarowe/stacje_radarowe/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/CMakeFiles/stacje_radarowe_autogen.dir/ParseCache.txt",
@@ -478,12 +469,14 @@
 	"SETTINGS_FILE" : "F:/stacje radarowe/stacje_radarowe/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/CMakeFiles/stacje_radarowe_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
-		[ "F:/stacje radarowe/stacje_radarowe/main.cpp", "MU", null ],
-		[ "F:/stacje radarowe/stacje_radarowe/mainwindow.cpp", "MU", null ]
+		[ "F:/stacje radarowe/stacje_radarowe/main.cpp", "MU", null ]
 	],
 	"UIC_OPTIONS" : [],
-	"UIC_SEARCH_PATHS" : [],
-	"UIC_SKIP" : [],
+	"UIC_SEARCH_PATHS" : [ "F:/stacje radarowe/stacje_radarowe" ],
+	"UIC_SKIP" : 
+	[
+		"F:/stacje radarowe/stacje_radarowe/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/mainwindow_lib_autogen/include/ui_mainwindow.h"
+	],
 	"UIC_UI_FILES" : [],
 	"USE_BETTER_GRAPH" : true,
 	"VERBOSITY" : 0

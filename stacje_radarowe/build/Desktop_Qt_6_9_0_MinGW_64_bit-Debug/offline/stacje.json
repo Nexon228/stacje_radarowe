@@ -1456,6 +1456,22 @@
         "stationName": "Florianka, RPN"
     },
     {
+        "addressStreet": "Wapienna",
+        "city": {
+            "commune": {
+                "communeName": "Zabierzów",
+                "districtName": "krakowski",
+                "provinceName": "MAŁOPOLSKIE"
+            },
+            "id": 2300,
+            "name": "Zabierzów"
+        },
+        "gegrLat": "50.116028",
+        "gegrLon": "19.800639",
+        "id": 11434,
+        "stationName": "Zabierzów, ul. Wapienna"
+    },
+    {
         "addressStreet": "Ujęcie Wody",
         "city": {
             "commune": {
@@ -1664,6 +1680,22 @@
         "stationName": "Kielce, ul. Warszawska 108"
     },
     {
+        "addressStreet": "ul. Jurajska 7",
+        "city": {
+            "commune": {
+                "communeName": "Kielce",
+                "districtName": "Kielce",
+                "provinceName": "ŚWIĘTOKRZYSKIE"
+            },
+            "id": 360,
+            "name": "Kielce"
+        },
+        "gegrLat": "50.887606",
+        "gegrLon": "20.579965",
+        "id": 16497,
+        "stationName": "Kielce, ul. Jurajska"
+    },
+    {
         "addressStreet": "ul. Mickiewicza 10",
         "city": {
             "commune": {
@@ -1870,6 +1902,70 @@
         "gegrLon": "20.053492",
         "id": 402,
         "stationName": "Kraków, ul. Bulwarowa"
+    },
+    {
+        "addressStreet": "Złoty Róg",
+        "city": {
+            "commune": {
+                "communeName": "Kraków",
+                "districtName": "Kraków",
+                "provinceName": "MAŁOPOLSKIE"
+            },
+            "id": 415,
+            "name": "Kraków"
+        },
+        "gegrLat": "50.081197",
+        "gegrLon": "19.895358",
+        "id": 10123,
+        "stationName": "Kraków, ul. Złoty Róg"
+    },
+    {
+        "addressStreet": "os. Piastów",
+        "city": {
+            "commune": {
+                "communeName": "Kraków",
+                "districtName": "Kraków",
+                "provinceName": "MAŁOPOLSKIE"
+            },
+            "id": 415,
+            "name": "Kraków"
+        },
+        "gegrLat": "50.098508",
+        "gegrLon": "20.018269",
+        "id": 10139,
+        "stationName": "Kraków, os. Piastów"
+    },
+    {
+        "addressStreet": "Wadów",
+        "city": {
+            "commune": {
+                "communeName": "Kraków",
+                "districtName": "Kraków",
+                "provinceName": "MAŁOPOLSKIE"
+            },
+            "id": 415,
+            "name": "Kraków"
+        },
+        "gegrLat": "50.100569",
+        "gegrLon": "20.122561",
+        "id": 10447,
+        "stationName": "Kraków, os. Wadów"
+    },
+    {
+        "addressStreet": "Lusińska",
+        "city": {
+            "commune": {
+                "communeName": "Kraków",
+                "districtName": "Kraków",
+                "provinceName": "MAŁOPOLSKIE"
+            },
+            "id": 415,
+            "name": "Kraków"
+        },
+        "gegrLat": "49.991442",
+        "gegrLon": "19.936792",
+        "id": 11303,
+        "stationName": "Kraków, os. Swoszowice"
     },
     {
         "addressStreet": "ul. Kamieńskiego",
@@ -2240,6 +2336,22 @@
         "stationName": "Mielec, ul. Biernackiego"
     },
     {
+        "addressStreet": "Solidarności 6",
+        "city": {
+            "commune": {
+                "communeName": "Myślenice",
+                "districtName": "myślenicki",
+                "provinceName": "MAŁOPOLSKIE"
+            },
+            "id": 583,
+            "name": "Myślenice"
+        },
+        "gegrLat": "49.831237",
+        "gegrLon": "19.923591",
+        "id": 16753,
+        "stationName": "Myślenice"
+    },
+    {
         "addressStreet": "ul. Świętego Wawrzyńca",
         "city": {
             "commune": {
@@ -2254,6 +2366,22 @@
         "gegrLon": "17.591539",
         "id": 9798,
         "stationName": "Nakło nad Notecią, ul. Św. Wawrzyńca"
+    },
+    {
+        "addressStreet": "ul. 3 Maja",
+        "city": {
+            "commune": {
+                "communeName": "Niepołomice",
+                "districtName": "wielicki",
+                "provinceName": "MAŁOPOLSKIE"
+            },
+            "id": 597,
+            "name": "Niepołomice"
+        },
+        "gegrLat": "50.035117",
+        "gegrLon": "20.212689",
+        "id": 455,
+        "stationName": "Niepołomice, ul. 3 Maja"
     },
     {
         "addressStreet": "Szklarniowa",
@@ -2286,6 +2414,22 @@
         "gegrLon": "16.498245",
         "id": 11254,
         "stationName": "Nowa Ruda, ul. Jeziorna"
+    },
+    {
+        "addressStreet": "T. Kościuszki",
+        "city": {
+            "commune": {
+                "communeName": "Nowa Sól",
+                "districtName": "nowosolski",
+                "provinceName": "LUBUSKIE"
+            },
+            "id": 605,
+            "name": "Nowa Sól"
+        },
+        "gegrLat": "51.809103",
+        "gegrLon": "15.708042",
+        "id": 16613,
+        "stationName": "Nowa Sól"
     },
     {
         "addressStreet": "ul. Parkowa",
@@ -2366,6 +2510,22 @@
         "gegrLon": "18.416878",
         "id": 584,
         "stationName": "Olesno, ul. Słowackiego"
+    },
+    {
+        "addressStreet": " Cegielniana",
+        "city": {
+            "commune": {
+                "communeName": "Olkusz",
+                "districtName": "olkuski",
+                "provinceName": "MAŁOPOLSKIE"
+            },
+            "id": 638,
+            "name": "Olkusz"
+        },
+        "gegrLat": "50.284000",
+        "gegrLon": "19.564044",
+        "id": 11301,
+        "stationName": "Olkusz, ul. Cegielniana"
     },
     {
         "addressStreet": "ul. Puszkina 16",
@@ -2478,6 +2638,22 @@
         "gegrLon": "19.969041",
         "id": 10030,
         "stationName": "Ostróda, ul. Piłsudskiego"
+    },
+    {
+        "addressStreet": "J. Bema",
+        "city": {
+            "commune": {
+                "communeName": "Oświęcim",
+                "districtName": "oświęcimski",
+                "provinceName": "MAŁOPOLSKIE"
+            },
+            "id": 660,
+            "name": "Oświęcim"
+        },
+        "gegrLat": "50.033083",
+        "gegrLon": "19.245275",
+        "id": 10814,
+        "stationName": "Oświęcim, ul. J. Bema"
     },
     {
         "addressStreet": "ul. Brzozowa 2",
@@ -2686,6 +2862,22 @@
         "gegrLon": "22.756239",
         "id": 665,
         "stationName": "Przemyśl, ul. Grunwaldzka"
+    },
+    {
+        "addressStreet": "Orkana",
+        "city": {
+            "commune": {
+                "communeName": "Rabka-Zdrój",
+                "districtName": "nowotarski",
+                "provinceName": "MAŁOPOLSKIE"
+            },
+            "id": 767,
+            "name": "Rabka-Zdrój"
+        },
+        "gegrLat": "49.608647",
+        "gegrLon": "19.966008",
+        "id": 10446,
+        "stationName": "Rabka-Zdrój, ul. Orkana"
     },
     {
         "addressStreet": "ul. Wojska Polskiego 8",

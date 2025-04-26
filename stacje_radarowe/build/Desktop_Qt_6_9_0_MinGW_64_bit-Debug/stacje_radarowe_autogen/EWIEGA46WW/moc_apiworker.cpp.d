@@ -2,6 +2,9 @@ F:/stacje\ radarowe/stacje_radarowe/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/st
   F:/stacje\ radarowe/stacje_radarowe/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/stacje_radarowe_autogen/moc_predefs.h \
   F:/qt/6.9.0/mingw_64/include/QtCore/QFlags \
   F:/qt/6.9.0/mingw_64/include/QtCore/QIODevice \
+  F:/qt/6.9.0/mingw_64/include/QtCore/QJsonArray \
+  F:/qt/6.9.0/mingw_64/include/QtCore/QJsonDocument \
+  F:/qt/6.9.0/mingw_64/include/QtCore/QJsonObject \
   F:/qt/6.9.0/mingw_64/include/QtCore/QList \
   F:/qt/6.9.0/mingw_64/include/QtCore/QMetaType \
   F:/qt/6.9.0/mingw_64/include/QtCore/QObject \
@@ -32,6 +35,8 @@ F:/stacje\ radarowe/stacje_radarowe/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/st
   F:/qt/6.9.0/mingw_64/include/QtCore/qbytearraylist.h \
   F:/qt/6.9.0/mingw_64/include/QtCore/qbytearrayview.h \
   F:/qt/6.9.0/mingw_64/include/QtCore/qcalendar.h \
+  F:/qt/6.9.0/mingw_64/include/QtCore/qcborcommon.h \
+  F:/qt/6.9.0/mingw_64/include/QtCore/qcborvalue.h \
   F:/qt/6.9.0/mingw_64/include/QtCore/qchar.h \
   F:/qt/6.9.0/mingw_64/include/QtCore/qcompare.h \
   F:/qt/6.9.0/mingw_64/include/QtCore/qcompare_impl.h \
@@ -48,6 +53,7 @@ F:/stacje\ radarowe/stacje_radarowe/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/st
   F:/qt/6.9.0/mingw_64/include/QtCore/qdatastream.h \
   F:/qt/6.9.0/mingw_64/include/QtCore/qdatetime.h \
   F:/qt/6.9.0/mingw_64/include/QtCore/qdebug.h \
+  F:/qt/6.9.0/mingw_64/include/QtCore/qendian.h \
   F:/qt/6.9.0/mingw_64/include/QtCore/qexceptionhandling.h \
   F:/qt/6.9.0/mingw_64/include/QtCore/qflags.h \
   F:/qt/6.9.0/mingw_64/include/QtCore/qfloat16.h \
@@ -63,6 +69,11 @@ F:/stacje\ radarowe/stacje_radarowe/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/st
   F:/qt/6.9.0/mingw_64/include/QtCore/qiodevicebase.h \
   F:/qt/6.9.0/mingw_64/include/QtCore/qiterable.h \
   F:/qt/6.9.0/mingw_64/include/QtCore/qiterator.h \
+  F:/qt/6.9.0/mingw_64/include/QtCore/qjsonarray.h \
+  F:/qt/6.9.0/mingw_64/include/QtCore/qjsondocument.h \
+  F:/qt/6.9.0/mingw_64/include/QtCore/qjsonobject.h \
+  F:/qt/6.9.0/mingw_64/include/QtCore/qjsonparseerror.h \
+  F:/qt/6.9.0/mingw_64/include/QtCore/qjsonvalue.h \
   F:/qt/6.9.0/mingw_64/include/QtCore/qlatin1stringview.h \
   F:/qt/6.9.0/mingw_64/include/QtCore/qlist.h \
   F:/qt/6.9.0/mingw_64/include/QtCore/qlocale.h \
@@ -83,6 +94,7 @@ F:/stacje\ radarowe/stacje_radarowe/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/st
   F:/qt/6.9.0/mingw_64/include/QtCore/qpair.h \
   F:/qt/6.9.0/mingw_64/include/QtCore/qprocessordetection.h \
   F:/qt/6.9.0/mingw_64/include/QtCore/qrefcount.h \
+  F:/qt/6.9.0/mingw_64/include/QtCore/qregularexpression.h \
   F:/qt/6.9.0/mingw_64/include/QtCore/qscopedpointer.h \
   F:/qt/6.9.0/mingw_64/include/QtCore/qscopeguard.h \
   F:/qt/6.9.0/mingw_64/include/QtCore/qset.h \
@@ -130,6 +142,7 @@ F:/stacje\ radarowe/stacje_radarowe/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/st
   F:/qt/6.9.0/mingw_64/include/QtCore/qtypes.h \
   F:/qt/6.9.0/mingw_64/include/QtCore/qurl.h \
   F:/qt/6.9.0/mingw_64/include/QtCore/qutf8stringview.h \
+  F:/qt/6.9.0/mingw_64/include/QtCore/quuid.h \
   F:/qt/6.9.0/mingw_64/include/QtCore/qvariant.h \
   F:/qt/6.9.0/mingw_64/include/QtCore/qvarlengtharray.h \
   F:/qt/6.9.0/mingw_64/include/QtCore/qversiontagging.h \

@@ -222,6 +222,21 @@ CMAKE_PROJECT_INCLUDE_BEFORE:FILEPATH=F:/stacje radarowe/stacje_radarowe/build/D
 //Value Computed by CMake
 CMAKE_PROJECT_NAME:STATIC=stacje_radarowe
 
+//Value Computed by CMake
+CMAKE_PROJECT_VERSION:STATIC=0.1
+
+//Value Computed by CMake
+CMAKE_PROJECT_VERSION_MAJOR:STATIC=0
+
+//Value Computed by CMake
+CMAKE_PROJECT_VERSION_MINOR:STATIC=1
+
+//Value Computed by CMake
+CMAKE_PROJECT_VERSION_PATCH:STATIC=
+
+//Value Computed by CMake
+CMAKE_PROJECT_VERSION_TWEAK:STATIC=
+
 //Path to a program.
 CMAKE_RANLIB:FILEPATH=F:/qt/Tools/mingw1310_64/bin/ranlib.exe
 
@@ -299,6 +314,9 @@ CMAKE_STRIP:FILEPATH=F:/qt/Tools/mingw1310_64/bin/strip.exe
 //Path to a program.
 CMAKE_TAPI:FILEPATH=CMAKE_TAPI-NOTFOUND
 
+//Vcpkg toolchain file
+CMAKE_TOOLCHAIN_FILE:STRING=F:/stacje radarowe/vcpkg/scripts/buildsystems/vcpkg.cmake
+
 //If this value is on, makefiles will be generated without the
 // .SILENT directive, and all commands will be echoed to the console
 // during the make.  This is useful for debugging only. With Visual
@@ -333,7 +351,7 @@ GTEST_MAIN_LIBRARY:FILEPATH=GTEST_MAIN_LIBRARY-NOTFOUND
 GTEST_MAIN_LIBRARY_DEBUG:FILEPATH=GTEST_MAIN_LIBRARY_DEBUG-NOTFOUND
 
 //The directory containing a CMake configuration file for GTest.
-GTest_DIR:PATH=GTest_DIR-NOTFOUND
+GTest_DIR:PATH=F:/stacje radarowe/vcpkg/installed/x64-windows/share/gtest
 
 //Additional directories where find(Qt6 ...) host Qt components
 // are searched
@@ -425,6 +443,9 @@ Vulkan_LIBRARY:FILEPATH=Vulkan_LIBRARY-NOTFOUND
 
 //Path to a program.
 WINDEPLOYQT_EXECUTABLE:FILEPATH=F:/qt/6.9.0/mingw_64/bin/windeployqt.exe
+
+//Dependencies for the target
+mainwindow_lib_LIB_DEPENDS:STATIC=general;Qt6::Widgets;general;Qt6::Network;general;Qt6::Charts;
 
 //Value Computed by CMake
 stacje_radarowe_BINARY_DIR:STATIC=F:/stacje radarowe/stacje_radarowe/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug
