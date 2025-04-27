@@ -1,0 +1,2 @@
+F:\qt\Tools\mingw1310_64\bin\ar.exe qc libmainwindow_lib.a CMakeFiles/mainwindow_lib.dir/mainwindow_lib_autogen/mocs_compilation.cpp.obj CMakeFiles/mainwindow_lib.dir/mainwindow.cpp.obj CMakeFiles/mainwindow_lib.dir/apiworker.cpp.obj
+F:\qt\Tools\mingw1310_64\bin\ranlib.exe libmainwindow_lib.a

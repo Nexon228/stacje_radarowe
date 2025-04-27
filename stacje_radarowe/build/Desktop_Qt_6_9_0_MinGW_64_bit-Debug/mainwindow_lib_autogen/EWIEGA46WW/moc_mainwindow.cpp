@@ -7,6 +7,7 @@
 *****************************************************************************/
 
 #include "../../../../mainwindow.h"
+#include <QtNetwork/QSslError>
 #include <QtGui/qtextcursor.h>
 #include <QtGui/qscreen.h>
 #include <QtCharts/qlineseries.h>
@@ -63,10 +64,38 @@ template <> constexpr inline auto MainWindow::qt_create_metaobjectdata<qt_meta_t
 {
     namespace QMC = QtMocConstants;
     QtMocHelpers::StringRefStorage qt_stringData {
-        "MainWindow"
+        "MainWindow",
+        "handleStationsFetched",
+        "",
+        "stations",
+        "city",
+        "handleSensorsFetched",
+        "sensors",
+        "stationId",
+        "handleDataFetched",
+        "data",
+        "sensorId",
+        "handleNetworkError",
+        "errorString"
     };
 
     QtMocHelpers::UintData qt_methods {
+        // Slot 'handleStationsFetched'
+        QtMocHelpers::SlotData<void(const QJsonArray &, const QString &)>(1, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { QMetaType::QJsonArray, 3 }, { QMetaType::QString, 4 },
+        }}),
+        // Slot 'handleSensorsFetched'
+        QtMocHelpers::SlotData<void(const QJsonArray &, int)>(5, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { QMetaType::QJsonArray, 6 }, { QMetaType::Int, 7 },
+        }}),
+        // Slot 'handleDataFetched'
+        QtMocHelpers::SlotData<void(const QJsonObject &, int)>(8, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { QMetaType::QJsonObject, 9 }, { QMetaType::Int, 10 },
+        }}),
+        // Slot 'handleNetworkError'
+        QtMocHelpers::SlotData<void(const QString &)>(11, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { QMetaType::QString, 12 },
+        }}),
     };
     QtMocHelpers::UintData qt_properties {
     };
@@ -88,10 +117,15 @@ Q_CONSTINIT const QMetaObject MainWindow::staticMetaObject = { {
 void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
     auto *_t = static_cast<MainWindow *>(_o);
-    (void)_t;
-    (void)_c;
-    (void)_id;
-    (void)_a;
+    if (_c == QMetaObject::InvokeMetaMethod) {
+        switch (_id) {
+        case 0: _t->handleStationsFetched((*reinterpret_cast< std::add_pointer_t<QJsonArray>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<QString>>(_a[2]))); break;
+        case 1: _t->handleSensorsFetched((*reinterpret_cast< std::add_pointer_t<QJsonArray>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<int>>(_a[2]))); break;
+        case 2: _t->handleDataFetched((*reinterpret_cast< std::add_pointer_t<QJsonObject>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<int>>(_a[2]))); break;
+        case 3: _t->handleNetworkError((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
+        default: ;
+        }
+    }
 }
 
 const QMetaObject *MainWindow::metaObject() const
@@ -110,6 +144,18 @@ void *MainWindow::qt_metacast(const char *_clname)
 int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
     _id = QMainWindow::qt_metacall(_c, _id, _a);
+    if (_id < 0)
+        return _id;
+    if (_c == QMetaObject::InvokeMetaMethod) {
+        if (_id < 4)
+            qt_static_metacall(this, _c, _id, _a);
+        _id -= 4;
+    }
+    if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
+        if (_id < 4)
+            *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
+        _id -= 4;
+    }
     return _id;
 }
 QT_WARNING_POP

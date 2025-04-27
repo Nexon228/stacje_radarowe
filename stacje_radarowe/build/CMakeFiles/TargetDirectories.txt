@@ -1,0 +1,12 @@
+F:/stacje radarowe/stacje_radarowe/build/CMakeFiles/mainwindow_lib.dir
+F:/stacje radarowe/stacje_radarowe/build/CMakeFiles/stacje_radarowe.dir
+F:/stacje radarowe/stacje_radarowe/build/CMakeFiles/tests.dir
+F:/stacje radarowe/stacje_radarowe/build/CMakeFiles/test.dir
+F:/stacje radarowe/stacje_radarowe/build/CMakeFiles/edit_cache.dir
+F:/stacje radarowe/stacje_radarowe/build/CMakeFiles/rebuild_cache.dir
+F:/stacje radarowe/stacje_radarowe/build/CMakeFiles/mainwindow_lib_autogen_timestamp_deps.dir
+F:/stacje radarowe/stacje_radarowe/build/CMakeFiles/mainwindow_lib_autogen.dir
+F:/stacje radarowe/stacje_radarowe/build/CMakeFiles/stacje_radarowe_autogen_timestamp_deps.dir
+F:/stacje radarowe/stacje_radarowe/build/CMakeFiles/stacje_radarowe_autogen.dir
+F:/stacje radarowe/stacje_radarowe/build/CMakeFiles/tests_autogen_timestamp_deps.dir
+F:/stacje radarowe/stacje_radarowe/build/CMakeFiles/tests_autogen.dir

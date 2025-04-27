@@ -2352,22 +2352,6 @@
         "stationName": "Myślenice"
     },
     {
-        "addressStreet": "ul. Świętego Wawrzyńca",
-        "city": {
-            "commune": {
-                "communeName": "Nakło nad Notecią",
-                "districtName": "nakielski",
-                "provinceName": "KUJAWSKO-POMORSKIE"
-            },
-            "id": 587,
-            "name": "Nakło nad Notecią"
-        },
-        "gegrLat": "53.136681",
-        "gegrLon": "17.591539",
-        "id": 9798,
-        "stationName": "Nakło nad Notecią, ul. Św. Wawrzyńca"
-    },
-    {
         "addressStreet": "ul. 3 Maja",
         "city": {
             "commune": {

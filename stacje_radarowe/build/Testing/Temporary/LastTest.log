@@ -1,0 +1,29 @@
+Start testing: Apr 27 19:44 Œrodkowoeuropejski czas letni
+----------------------------------------------------------
+1/1 Testing: MyTests
+1/1 Test: MyTests
+Command: "F:/stacje radarowe/stacje_radarowe/build/tests.exe"
+Directory: F:/stacje radarowe/stacje_radarowe/build
+"MyTests" start time: Apr 27 19:44 Œrodkowoeuropejski czas letni
+Output:
+----------------------------------------------------------
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from MainWindowTest
+[ RUN      ] MainWindowTest.Initialization
+MainWindow thread: QThread(0x271f4c48090, name = "Qt mainThread")
+[       OK ] MainWindowTest.Initialization (87 ms)
+[----------] 1 test from MainWindowTest (87 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (87 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.39 sec
+----------------------------------------------------------
+Test Passed.
+"MyTests" end time: Apr 27 19:44 Œrodkowoeuropejski czas letni
+"MyTests" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Apr 27 19:44 Œrodkowoeuropejski czas letni

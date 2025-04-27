@@ -1,0 +1,8 @@
+set(__QT_DEPLOY_TARGET_mainwindow_lib_FILE F:/stacje radarowe/stacje_radarowe/build/libmainwindow_lib.a)
+set(__QT_DEPLOY_TARGET_mainwindow_lib_TYPE STATIC_LIBRARY)
+set(__QT_DEPLOY_TARGET_stacje_radarowe_FILE F:/stacje radarowe/stacje_radarowe/build/stacje_radarowe.exe)
+set(__QT_DEPLOY_TARGET_stacje_radarowe_TYPE EXECUTABLE)
+set(__QT_DEPLOY_TARGET_stacje_radarowe_RUNTIME_DLLS F:/qt/6.9.0/mingw_64/bin/Qt6Network.dll;F:/qt/6.9.0/mingw_64/bin/Qt6Charts.dll;F:/qt/6.9.0/mingw_64/bin/Qt6OpenGLWidgets.dll;F:/qt/6.9.0/mingw_64/bin/Qt6Widgets.dll;F:/qt/6.9.0/mingw_64/bin/Qt6OpenGL.dll;F:/qt/6.9.0/mingw_64/bin/Qt6Gui.dll;F:/qt/6.9.0/mingw_64/bin/Qt6Core.dll)
+set(__QT_DEPLOY_TARGET_tests_FILE F:/stacje radarowe/stacje_radarowe/build/tests.exe)
+set(__QT_DEPLOY_TARGET_tests_TYPE EXECUTABLE)
+set(__QT_DEPLOY_TARGET_tests_RUNTIME_DLLS F:/qt/6.9.0/mingw_64/bin/Qt6Network.dll;F:/qt/6.9.0/mingw_64/bin/Qt6Charts.dll;F:/qt/6.9.0/mingw_64/bin/Qt6OpenGLWidgets.dll;F:/qt/6.9.0/mingw_64/bin/Qt6Widgets.dll;F:/qt/6.9.0/mingw_64/bin/Qt6OpenGL.dll;F:/qt/6.9.0/mingw_64/bin/Qt6Gui.dll;F:/qt/6.9.0/mingw_64/bin/Qt6Core.dll)
