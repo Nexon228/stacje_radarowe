@@ -53,17 +53,17 @@ message(STATUS "GMock main library: ${GMOCK_MAIN_LIBRARY}")
 
 # Biblioteka współdzielona dla MainWindow
 add_library(mainwindow_lib STATIC
-    mainwindow.cpp
-    mainwindow.h
-    mainwindow.ui
-    apiworker.cpp
-    apiworker.h
+    src/main_window.cpp
+    include/main_window.h
+    ui/main_window.ui
+    src/api_client.cpp
+    include/api_client.h
 )
 target_link_libraries(mainwindow_lib PRIVATE Qt6::Widgets Qt6::Network Qt6::Charts)
 
 # Główna aplikacja
 set(PROJECT_SOURCES
-    main.cpp
+    src/main.cpp
 )
 add_executable(stacje_radarowe ${PROJECT_SOURCES})
 target_link_libraries(stacje_radarowe PRIVATE mainwindow_lib Qt6::Widgets Qt6::Network Qt6::Charts)
@@ -73,7 +73,7 @@ enable_testing()
 
 # Dodaj folder tests
 add_executable(tests
-    tests/test_main.cpp
+    tests/test_src/main.cpp
 )
 set_target_properties(tests PROPERTIES AUTOUIC_SEARCH_PATHS ${CMAKE_SOURCE_DIR})
 target_include_directories(tests PRIVATE ${CMAKE_SOURCE_DIR} ${GTEST_INCLUDE_DIRS})
@@ -81,3 +81,4 @@ target_link_libraries(tests PRIVATE mainwindow_lib Qt6::Widgets Qt6::Network Qt6
 
 # Dodaj testy do CTest
 add_test(NAME MyTests COMMAND tests)
+
