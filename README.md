@@ -59,13 +59,26 @@ Projekt zawiera następujące opcje CMake:
 
 ## Struktura projektu
 
-- main.cpp - punkt wejścia aplikacji
-- src/api_client.cpp, include/api_client.hpp - klasa do komunikacji z API GIOŚ
-- src/main_window.cpp, include/main_window.hpp - główne okno aplikacji
-- tests/ - testy jednostkowe z użyciem Google Test
-- data/ - katalog do przechowywania lokalnych kopii danych
-- export/ - domyślny katalog na eksportowane pliki JSON
-- docs/ - automatycznie generowana dokumentacja (Doxygen)
+## Struktura projektu
+
+- `src/` — pliki źródłowe aplikacji
+  - `main.cpp` — punkt wejścia aplikacji
+  - `api_client.cpp` — klient API (pobieranie danych z GIOŚ)
+  - `main_window.cpp` — logika głównego okna
+- `include/` — nagłówki
+  - `api_client.h` — interfejs klienta API
+  - `main_window.h` — interfejs głównego okna
+- `ui/`
+  - `main_window.ui` — layout GUI (Qt Designer)
+- `tests/` — testy jednostkowe (GoogleTest/CTest)
+- `docs/html/` — wygenerowana dokumentacja (Doxygen)
+- `CMakeLists.txt` — konfiguracja budowania (CMake)
+- `CMakePresets.json` — presety CMake (łatwiejszy build na różnych środowiskach)
+- `vcpkg.json` — manifest zależności (vcpkg)
+- `DEPENDENCIES.md` — opis zależności i wymagań środowiska
+- `.gitignore` — ignorowane pliki (IDE/build)
+- `Doxyfile` — konfiguracja Doxygen
+
 
 ## Testowanie
 
