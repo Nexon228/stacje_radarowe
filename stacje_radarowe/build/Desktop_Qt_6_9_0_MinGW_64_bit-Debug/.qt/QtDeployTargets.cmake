@@ -1,8 +1,0 @@
-set(__QT_DEPLOY_TARGET_mainwindow_lib_FILE F:/stacje radarowe/stacje_radarowe/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/libmainwindow_lib.a)
-set(__QT_DEPLOY_TARGET_mainwindow_lib_TYPE STATIC_LIBRARY)
-set(__QT_DEPLOY_TARGET_stacje_radarowe_FILE F:/stacje radarowe/stacje_radarowe/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/stacje_radarowe.exe)
-set(__QT_DEPLOY_TARGET_stacje_radarowe_TYPE EXECUTABLE)
-set(__QT_DEPLOY_TARGET_stacje_radarowe_RUNTIME_DLLS C:/qt2/6.9.0/mingw_64/bin/Qt6Network.dll;C:/qt2/6.9.0/mingw_64/bin/Qt6Charts.dll;C:/qt2/6.9.0/mingw_64/bin/Qt6OpenGLWidgets.dll;C:/qt2/6.9.0/mingw_64/bin/Qt6Widgets.dll;C:/qt2/6.9.0/mingw_64/bin/Qt6OpenGL.dll;C:/qt2/6.9.0/mingw_64/bin/Qt6Gui.dll;C:/qt2/6.9.0/mingw_64/bin/Qt6Core.dll)
-set(__QT_DEPLOY_TARGET_tests_FILE F:/stacje radarowe/stacje_radarowe/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/tests.exe)
-set(__QT_DEPLOY_TARGET_tests_TYPE EXECUTABLE)
-set(__QT_DEPLOY_TARGET_tests_RUNTIME_DLLS C:/qt2/6.9.0/mingw_64/bin/Qt6Network.dll;C:/qt2/6.9.0/mingw_64/bin/Qt6Charts.dll;C:/qt2/6.9.0/mingw_64/bin/Qt6Test.dll;C:/qt2/6.9.0/mingw_64/bin/Qt6OpenGLWidgets.dll;C:/qt2/6.9.0/mingw_64/bin/Qt6Widgets.dll;C:/qt2/6.9.0/mingw_64/bin/Qt6OpenGL.dll;C:/qt2/6.9.0/mingw_64/bin/Qt6Gui.dll;C:/qt2/6.9.0/mingw_64/bin/Qt6Core.dll)
