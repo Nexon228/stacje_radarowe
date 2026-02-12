@@ -1,0 +1,9 @@
+﻿{
+  "name": "stacje-radarowe",
+  "version-string": "0.1.0",
+  "dependencies": [
+    "qt6-base",
+    "qt6-charts",
+    "gtest"
+  ]
+}
