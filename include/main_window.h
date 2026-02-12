@@ -3,7 +3,7 @@
 
 #include <QMainWindow>
 #include <QThread>
-#include "apiworker.h"
+#include "api_client.h"
 
 #include <QtCharts>
 
@@ -76,3 +76,4 @@ private:
 };
 
 #endif // MAINWINDOW_H
+
