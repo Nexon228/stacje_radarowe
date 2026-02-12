@@ -38,8 +38,8 @@ Monitor Jakości Powietrza to aplikacja, która umożliwia użytkownikowi przegl
 ### Kompilacja ze źródeł
 
 1. Sklonuj repozytorium:
-git clone https://github.com/twojlogin/monitor-jakosci-powietrza.git
-cd monitor-jakosci-powietrza
+git clone https://github.com/Nexon228/stacje_radarowe.git
+cd stacje_radarowe
 
 2. Utwórz katalog build i skompiluj projekt:
 mkdir build
