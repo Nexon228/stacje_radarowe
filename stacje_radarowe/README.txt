@@ -1,36 +1,145 @@
-# Air Quality Monitoring Application
+# Monitor Jakości Powietrza
 
-## Overview
-This application monitors air quality in Poland by fetching data from the GIOŚ API. It supports online and offline modes, displays data on a chart, and performs statistical analysis (min, max, average, trend).
+Aplikacja desktopowa do monitorowania jakości powietrza wykorzystująca API Głównego Inspektoratu Ochrony Środowiska (GIOŚ).
 
-## Requirements
-- Qt 6.9.0 or higher
-- CMake 3.14 or higher
-- Google Test (for unit tests)
-- Doxygen (for documentation generation)
-- MinGW (for Windows)
+## Opis
 
-## Building the Application
-1. Clone the repository from GitHub.
-2. Create a build directory: `mkdir build && cd build`
-3. Run CMake: `cmake .. -G "Ninja"`
-4. Build the application: `ninja`
+Monitor Jakości Powietrza to aplikacja, która umożliwia użytkownikowi przeglądanie danych o jakości powietrza z różnych stacji pomiarowych w Polsce. Aplikacja pobiera dane z oficjalnego API GIOŚ, prezentuje je w formie tabel i wykresów oraz umożliwia zapisywanie danych do plików JSON w celu późniejszej analizy.
 
-## Running the Application
-1. Navigate to the build directory.
-2. Run the executable: `./stacje_radarowe`
+## Funkcje
 
-## Running Unit Tests
-1. In the build directory, build the tests: `ninja tests`
-2. Run the tests: `ctest`
+- Pobieranie listy stacji pomiarowych z całej Polski
+- Wyświetlanie czujników dostępnych na wybranej stacji
+- Wyświetlanie pomiarów dla wybranego czujnika lub wszystkich czujników
+- Wizualizacja danych w formie tabeli i wykresów
+- Eksport danych do plików JSON
+- Import wcześniej zapisanych danych
+- Kolorystyczne rozróżnianie parametrów na wykresach
 
-## Generating Documentation
-1. Install Doxygen.
-2. Run: `doxygen Doxyfile`
-3. Open `docs/html/index.html` to view the documentation.
+## Wymagania systemowe
 
-## Usage
-1. Enter a city name and click "Pobierz stacje" to fetch stations.
-2. Select a station and a sensor.
-3. Choose a time range and click "Pobierz dane" to fetch and display data.
-4. Use the "Offline" button to work with locally cached data if the network is unavailable.
+- System operacyjny: Windows, Linux
+- Procesor: 1 GHz lub szybszy
+- Pamięć RAM: minimum 512 MB
+- Miejsce na dysku: minimum 50 MB
+- Połączenie internetowe 
+
+## Wymagania techniczne
+
+- C++17 lub nowszy
+- Qt 5.12 lub nowszy
+- libcurl
+- nlohmann/json
+- GoogleTest (do testów jednostkowych)
+- CMake 3.14 lub nowszy
+
+## Instalacja
+
+### Kompilacja ze źródeł
+
+1. Sklonuj repozytorium:
+git clone https://github.com/twojlogin/monitor-jakosci-powietrza.git
+cd monitor-jakosci-powietrza
+
+2. Utwórz katalog build i skompiluj projekt:
+mkdir build
+cd build
+cmake ..
+make
+
+3. Uruchom aplikację:
+./AirQualityApp
+
+### Opcje CMake
+
+Projekt zawiera następujące opcje CMake:
+
+- -DBUILD_TESTS=OFF - wyłączenie kompilacji testów
+- -DBUILD_DOCS=OFF - wyłączenie generowania dokumentacji
+
+## Struktura projektu
+
+- main.cpp - punkt wejścia aplikacji
+- src/api_client.cpp, include/api_client.hpp - klasa do komunikacji z API GIOŚ
+- src/main_window.cpp, include/main_window.hpp - główne okno aplikacji
+- tests/ - testy jednostkowe z użyciem Google Test
+- data/ - katalog do przechowywania lokalnych kopii danych
+- export/ - domyślny katalog na eksportowane pliki JSON
+- docs/ - automatycznie generowana dokumentacja (Doxygen)
+
+## Testowanie
+
+Aplikacja zawiera testy jednostkowe napisane z wykorzystaniem frameworka GoogleTest. Aby uruchomić testy:
+
+cd build
+make test
+
+lub bezpośrednio:
+
+./tests/test_api_client
+./tests/test_main_window
+
+## Dokumentacja
+
+Dokumentacja kodu jest generowana przy użyciu narzędzia Doxygen. Po zbudowaniu projektu z włączoną opcją dokumentacji, możesz ją przeglądać otwierając plik build/docs/html/index.html w przeglądarce.
+
+Aby wygenerować dokumentację:
+
+cd build
+make docs
+
+## API GIOŚ
+
+Aplikacja korzysta z publicznego API Głównego Inspektoratu Ochrony Środowiska dostępnego pod adresem:
+http://api.gios.gov.pl/pjp-api/rest
+
+Endpointy używane przez aplikację:
+- /station/findAll - pobieranie listy stacji pomiarowych
+- /station/sensors/{stationId} - pobieranie czujników dla danej stacji
+- /data/getData/{sensorId} - pobieranie danych pomiarowych dla czujnika
+
+## Znane problemy
+
+- Aplikacja obecnie obsługuje tylko język polski
+- Niektóre ścieżki plików są zdefiniowane na stałe
+- Wyłączona weryfikacja SSL podczas komunikacji z API (w przypadku HTTPS)
+- Wyświetlanie dużej ilości danych może wpływać na wydajność aplikacji
+
+## Planowane funkcje
+
+- Obsługa wielu języków
+- Eksport danych do formatu CSV
+- Filtrowanie danych według zakresu dat
+- Porównywanie danych z różnych stacji na jednym wykresie
+- Mapa Polski z zaznaczonymi stacjami pomiarowymi
+- Powiadomienia o przekroczeniu norm jakości powietrza
+
+## Rozwiązywanie problemów
+
+### Problem z połączeniem do API
+
+Jeśli aplikacja nie może nawiązać połączenia z API GIOŚ:
+1. Sprawdź swoje połączenie internetowe
+2. Upewnij się, że firewall nie blokuje aplikacji
+3. API GIOŚ może być czasowo niedostępne - spróbuj ponownie później
+4. Skorzystaj z danych zapisanych lokalnie przez wybranie opcji "Przeglądaj zapisane dane"
+
+### Problemy z kompilacją
+
+1. Upewnij się, że masz zainstalowane wszystkie wymagane zależności
+2. Sprawdź, czy używasz kompatybilnej wersji Qt (5.12 lub nowszej)
+3. Upewnij się, że masz wystarczające uprawnienia do tworzenia katalogów
+
+## Licencja
+
+Ten projekt jest udostępniany na licencji MIT. Szczegóły w pliku LICENSE.
+
+## Autor
+
+Alan Woroch
+
+## Podziękowania
+
+- Głównemu Inspektoratowi Ochrony Środowiska za udostępnienie API
+- Twórcom bibliotek Qt, libcurl i nlohmann/json
+- Społeczności C++ za wsparcie i inspirację
